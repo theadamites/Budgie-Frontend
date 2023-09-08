@@ -4,17 +4,17 @@ import axios from "axios";
 
 export default function CreateAnAccount() {
     const [user, setUser] = useState({
-        UserName: " ",
-        FirstName: " ",
-        LastName: " ",
-        Occupation :" ",
-        Email:" ",
+        UserName: "",
+        FirstName: "",
+        LastName: "",
+        Occupation :"",
+        Email:"",
         Expenses:[],
         BudgetAllocations:[],
-        SavingsGoal:" ",
-        Age: " ",
-        Income: " ",
-        Password: " ",
+        SavingsGoal:"",
+        Age: "",
+        Income: "",
+        Password: "",
         admin: false
       });
 
@@ -53,9 +53,7 @@ const handleSubmit = async (event) => {
    <div className='App'>
               <h1>Create a Profile</h1>
         <h2>Enter the Following Information</h2>
-            
         <form onSubmit={handleSubmit} className="form-container">
-
             <input
               className="input-field"
               value={user.FirstName || ""}
@@ -64,9 +62,7 @@ const handleSubmit = async (event) => {
               onChange={change}
               required={true} 
               placeholder ='First Name'
-              style={{ borderColor: user.FirstName ? "initial" : "red" }}
             ></input>
-
             <input
               className="input-field"
               placeholder="Last Name"
@@ -75,9 +71,7 @@ const handleSubmit = async (event) => {
               type="String"
               onChange={change}
               required={true} 
-              style={{ borderColor: user.LastName ? "initial" : "red" }}
             ></input>
-
             <input
               className="input-field"
               placeholder="Age"
@@ -85,7 +79,6 @@ const handleSubmit = async (event) => {
               name="Age"
               type="number"
               onChange={change}
-              style={{ borderColor: user.Age ? "initial" : "red" }}
             ></input>
             <input
               className="input-field"
@@ -94,9 +87,7 @@ const handleSubmit = async (event) => {
               name="Occupation"
               type="String"
               onChange={change}
-              style={{ borderColor: user.Occupation ? "initial" : "rgb red" }}
             ></input>
-
             <input
               className="input-field"
               placeholder="Yearly Income"
@@ -105,33 +96,36 @@ const handleSubmit = async (event) => {
               type='number'
               onChange={change}
               required={true} 
-              style={{ borderColor: user.Income ? "initial" : "red" }}
             ></input>
               <input
               className="input-field"
-              placeholder="User Name"
-              value={user.UserName || ""}
-              name="UserName"
+              placeholder="Email"
+              value={user.Email || ""}
+              name="Email"
               type="String"
               onChange={change}
-              required={true} 
-              style={{ borderColor: user.UserName ? "initial" : "red" }}
+            ></input>
+              <input
+              className = "input-field"
+              placeholder = "User Name"
+              value = {user.UserName || ""}
+              name = "UserName"
+              type = "String"
+              onChange = {change}
+              required = {true} 
             ></input>
             <input
               className="input-field"
-              Placeholder="Password"
+              placeholder="Password"
               value={user.Password || ""}
               name="Password"
               type="String"
-              onChange={change}
-              required={true} 
-              style={{ borderColor: user.Password ? "initial" : "red", marginBottom:'25px' }}
+              onChange = {change}
+              required = {true} 
+              style={{marginBottom:'25px' }}
             ></input>
-
             <button type="submit" className="submit-button" >Create Account</button>
             <button className="submit-button" onClick={handleLoginClick}>Login Account</button>
-
-
           </form>
         <div>
       </div>
